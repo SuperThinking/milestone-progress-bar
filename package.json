@@ -1,0 +1,29 @@
+{
+  "name": "milestone-progress-bar",
+  "version": "1.0.1",
+  "description": "Just a progress bar with milestones",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SuperThinking/milestone-progress-bar.git"
+  },
+  "author": "Vishal Dhawan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SuperThinking/milestone-progress-bar/issues"
+  },
+  "homepage": "https://github.com/SuperThinking/milestone-progress-bar#readme",
+  "dependencies": {
+    "tsc": "^1.20150623.0"
+  },
+  "keywords": [
+    "progress-bar",
+    "progressbar",
+    "milestone-progress-bar",
+    "react-native"
+  ]
+}
