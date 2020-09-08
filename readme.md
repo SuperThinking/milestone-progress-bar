@@ -1,3 +1,11 @@
+# Milestone Progress Bar
+
+
+![](images/ProgressBarExample.gif)
+
+
+`import {MilestoneProgressBar} from 'milestone-progress-bar';`
+
 An example of usage:
 
     <MilestoneProgressBar
