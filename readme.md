@@ -3,8 +3,15 @@
 
 ![](images/ProgressBarExample.gif)
 
+<b>Check out this package at [NPM](https://www.npmjs.com/package/milestone-progress-bar)</b>
 
-`import {MilestoneProgressBar} from 'milestone-progress-bar';`
+How to install:
+
+    npm install milestone-progress-bar
+
+How to import:
+
+    import {MilestoneProgressBar} from 'milestone-progress-bar';
 
 An example of usage:
 
