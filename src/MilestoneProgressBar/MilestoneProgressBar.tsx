@@ -19,39 +19,25 @@ const progressBar = (
   total: number,
   index: number,
   nextStepStarted: boolean
-): React.ReactElement[] => {
+): React.ReactElement => {
+  let completePercentage = (completed * 100) / total;
+  let completePercentageString = `${completePercentage}%`;
+  let progressBarStyle = "blank";
   var progress: any[] = new Array();
-
   if (index === 0 && completed > 0) {
-    if (nextStepStarted || completed > 1)
-      progress.push(<ProgressBar type="leftCurved" key={`0-${index}`} />);
-    else progress.push(<ProgressBar type="default" key={`0-${index}`} />);
+    if (nextStepStarted) progressBarStyle = "leftCurved";
+    else progressBarStyle = "default";
   } else if (completed > 0) {
-    if (nextStepStarted || completed > 1)
-      progress.push(<ProgressBar type="flat" key={`0-${index}`} />);
-    else progress.push(<ProgressBar type="rightCurved" key={`0-${index}`} />);
+    if (nextStepStarted) progressBarStyle = "flat";
+    else progressBarStyle = "rightCurved";
   }
-
-  for (let i = 1; i < completed - 1; i++)
-    progress.push(<ProgressBar type="flat" key={`${i}-${index}`} />);
-
-  if (completed > 1) {
-    if (nextStepStarted)
-      progress.push(
-        <ProgressBar type="flat" key={`${completed - 1}-${index}`} />
-      );
-    else
-      progress.push(
-        <ProgressBar type="rightCurved" key={`${completed - 1}-${index}`} />
-      );
-  }
-
-  for (let i = completed; i < total; i++) {
-    progress.push(
-      <ProgressBar type="blankPlaceholder" key={`${i}-${index}`} />
-    );
-  }
-  return progress;
+  return (
+    <ProgressBar
+      type={progressBarStyle}
+      key={`0-${index}`}
+      percentage={completePercentageString}
+    />
+  );
 };
 
 const generateProgressBar = (

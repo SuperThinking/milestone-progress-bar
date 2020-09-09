@@ -3,6 +3,7 @@ import { StyleSheet, View } from "react-native";
 
 interface ProgressBarProps {
   type: string;
+  percentage: string;
 }
 
 const getStyleFromType = (type: string): object => {
@@ -15,37 +16,34 @@ const getStyleFromType = (type: string): object => {
 
 function ProgressBar(props: ProgressBarProps): React.ReactElement {
   const { type } = props;
-  return <View style={getStyleFromType(type)}></View>;
+  return (
+    <View style={[getStyleFromType(type), { width: props.percentage }]}></View>
+  );
 }
 
 const styles = StyleSheet.create({
   defaultProgressBar: {
-    flex: 1,
     backgroundColor: "#B5B5B6",
     height: 15,
     borderRadius: 10.5,
   },
   leftCurvedProgressBar: {
-    flex: 1,
     backgroundColor: "#B5B5B6",
     height: 15,
     borderTopLeftRadius: 10.5,
     borderBottomLeftRadius: 10.5,
   },
   flatProgressBar: {
-    flex: 1,
     backgroundColor: "#B5B5B6",
     height: 15,
   },
   rightCurvedProgressBar: {
-    flex: 1,
     backgroundColor: "#B5B5B6",
     height: 15,
     borderTopRightRadius: 10.5,
     borderBottomRightRadius: 10.5,
   },
   blankProgressBar: {
-    flex: 1,
     backgroundColor: "#EDEDEF",
     height: 15,
     borderRadius: 10.5,
